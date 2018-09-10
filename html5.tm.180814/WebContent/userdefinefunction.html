@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트-사용자정의함수</title>
+</head>
+<body>
+	<input type="button" value="버튼" id="btn" />
+
+
+</body>
+<script>
+	// 함수 정의
+	function disp() {
+		document.writeln("Hello Function <br/>")
+	}
+
+	// 함수 호출
+	disp();
+
+	var print = function() {
+		document.writeln("Hello Function <br/>")
+	}
+
+	print()
+
+	// ()를 하지 않으면 저장한 내용을 출
+	// alert(print())
+
+	// 2개의 매개변수를 받아서 2개의 합을 리턴하는 메소드
+	var add = function(n1, n2) {
+		// return n1+n2
+
+		// 자바 스크립트는 매개변수를 내부적으로 argument라는 배열에 순서대로 저장합니다.
+		return arguments[0] + arguments[1]
+
+	}
+
+	var result = add(10, 30)
+	document.writeln("result = " + result + "<br />")
+
+	// btn이라는 id를 가진 버튼을 눌렀을 때 호출되는 함수
+	document.getElementById("btn").onclick = function() {
+		alert("아무 일도 일어나지 않았습니다.")
+	}
+
+	var outer = function() {
+		// 지역 변수 : 선언된 구역 안에서만 사용 가능한 변수
+		var i = 10
+
+		// closure : 함수 외부에서 함수 내부의 데이터를 변경할 목적으로 사용 (람다)
+		return function() {
+			i = i + 1
+			alert(i)
+		}
+
+	}
+	
+	var inner = outer()
+	inner()
+	inner()
+	
+</script>
+
+</html>

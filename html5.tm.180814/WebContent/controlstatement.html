@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트-제어문</title>
+</head>
+<body>
+	<script>
+/*)
+var year = 2018
+
+// year가 윤년이면 화면에 윤년이라고 출력하고 그렇지 않으면 윤년이 아님이라고 출력
+// 윤년의 조건 ( 4의 배수이고 100의 배수가 아닌 경우 또는 400의 배수인 경우)
+
+alert("윤년일까요?")
+
+if ( year%4==0 && year%100!=0 || year%400==0){
+	
+console.log("윤년입니다.")
+	
+}
+
+else { console.log("윤년이 아니라니까요.")}
+
+if ( year%4==0 && year%100!=0 || year%400==0){
+	
+	document.writeln("윤년입니다.")
+		
+	}
+
+	else { document.writeln("윤년이 아니지롱~")}
+
+
+*/
+
+/*
+// menu가 1일 때는 한식, 2이면 중식, 3이면 양식, 그 외에는 식사 안해요.라고 화면에 출력하도록 switch로 작성
+var menu = 3
+
+switch(menu){
+case(1):
+	document.writeln("<br/>한식") 
+	break
+
+case(2):
+	document.writeln("<br/>중식") 
+	break
+
+case(3):
+	document.writeln("<br/>양식") 
+	break
+
+default:
+	document.writeln("<br/>식사안해요.")
+    break;
+}    
+*/
+
+/*
+// 2~1000까지 완전수의 개수를 화면에 출력 ( 완전수 - 자기 자신을 제외한 약수의 합이 자기 자신인 수 , 약수 - 나누어 떨어지는 수 )
+// ex) 6 - 1 , 2 , 3 , 6 : 1 + 2 + 3 = 6 
+
+var cnt = 0
+var i = 2
+while( i <= 1000 ){
+	
+	var sum = 0 
+	var j = 1
+	
+	while ( j < i ){
+		
+		if ( i % j == 0 ){
+			
+			// 약수의 합 구하기 (1부터 자기자신보다 작을 때까지 나누어 떨어지면 sum에 더해서 저장)
+			sum = sum + j
+			
+		}
+		
+		j = j + 1
+		
+	}
+	
+	// 완전수 확인
+	if (i == sum){ 
+		
+		document.writeln("<br/>완전수 : " + i)
+		
+		cnt = cnt +1
+		
+	}
+	
+	i = i + 1
+	
+}
+
+document.writeln("<br/><br/> 완전수 개수 : " + cnt)
+*/
+
+
+// 2부터 1000까지의 소수의 개수 ( 소수 ( prime ) : 1과 자기 자신으로만 나누어 떨어지는 수 )
+var idx = 2
+var prime = 0
+while (idx <= 1000){
+	
+	// 2부터 자신의 절반이 되는 수까지 나누어서 떨어지면 반복문을 중
+	var div = 2
+    var flag = false
+	
+	while ( div <= idx / 2 ) {
+		
+		if ( idx % div == 0) {
+			
+			flag = true
+			
+			break
+					
+		}
+		
+		div = div + 1
+		
+	}
+	
+	// 반복문을 끝까지 수행했는지 확인
+	if ( flag == false ){
+		
+		prime = prime + 1
+	}
+	
+	idx = idx + 1
+	
+}
+
+document.writeln("<br/> 소수의 개수 : " + prime)
+
+
+
+
+
+
+</script>
+</body>
+</html>

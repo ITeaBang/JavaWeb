@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>maker 함수</title>
+</head>
+<body>
+	<script>
+		var name = prompt("이름을 입력해주세요", "이름입력")
+		document.writeln("이름 :" + name)
+
+		var url = "http://www.daum.net?name=관리자"
+		document.writeln("<br/>" + url)
+		document.writeln("<br/>encodeURIComponent : "
+		+ encodeURIComponent(url))
+		document.writeln("<br/>escape : "
+		+ escape(url))
+		document.writeln("<br/>encodeURI : "
+		+ encodeURI(url))
+	</script>
+</body>
+</html>
