@@ -1,0 +1,12 @@
+h4{
+	font-size: 100px;
+	text-shadow: 10px 10px #cccc99, 20px 20px blue;
+}
+
+h3{color:blue;}
+/* 주석입니다.*/
+.article, #atid{color:green;}
+
+h3:hover{color:gray;}
+h3:active{color:yellow;}
+
