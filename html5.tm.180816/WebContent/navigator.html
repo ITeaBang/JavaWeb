@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 브라우저와 운영체제</title>
+</head>
+<body>
+
+</body>
+<script>
+
+	// 크롬에서 접속하면 구글 홈페이지로 보내기
+	var ar = [ 'chrome' ]
+	var flag = false
+	alert(navigator.userAgent)
+	for (idx in ar) {
+		
+
+		if (navigator.userAgent.toLowerCase().indexOf(ar[idx]) >= 0) {
+			flag = true
+			break
+		}
+	}
+
+	if (flag == true) {
+		window.location = "https://www.google.co.kr"
+	}
+	
+</script>
+</html>
